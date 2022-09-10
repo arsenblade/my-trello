@@ -26,9 +26,7 @@ export const authService = {
       name,
     }
 
-    const response = await axiosPublic.post<IUser>(getRegisterUrl(), {
-      defaultUser
-    })
+    const response = await axiosPublic.post<IUser>(getRegisterUrl(), defaultUser)
 
     if(response.data) saveTokenStorage(uuid.v4(), response.data)
 
