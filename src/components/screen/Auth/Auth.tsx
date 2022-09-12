@@ -1,4 +1,6 @@
 import React, { FC, FormEvent, useState } from 'react'
+import { useLocation, useNavigate, useParams } from 'react-router'
+import { Link } from 'react-router-dom'
 import { useActions } from '../../../hooks/useActions'
 import { useAuth } from '../../../hooks/useAuth'
 import Button from '../../ui/Button/Button'
@@ -15,6 +17,8 @@ const Auth:FC<IAuthProps> = ({type}) => {
   const [name, setName] = useState('')
   const {login, register} = useActions()
   const {user, isLoading} = useAuth()
+  const navigate = useNavigate()
+  const {pathname} = useLocation()
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -27,6 +31,7 @@ const Auth:FC<IAuthProps> = ({type}) => {
   }
 
   if(isLoading === true || user) {
+    navigate('/')
     return (null)
   }
 
@@ -36,7 +41,18 @@ const Auth:FC<IAuthProps> = ({type}) => {
       <Input type="text" placeholder='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
       <Input type="text" placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
       {type === 'registration' && <Input type="text" placeholder='name' value={name} onChange={(e) => setName(e.target.value)} />}
-      <Button>{type === 'registration' ? 'Зарегистрироваться' : 'Войти'}</Button>
+      {type === 'login' &&
+        <div className={styles.btnContainer}>
+          <Link to='/registration'>Зарегистрироваться</Link>
+          <Button>Войти</Button>
+        </div>
+      }
+      {type === 'registration' &&
+        <div className={styles.btnContainer}>
+          <Link to='/login'>Войти</Link>
+          <Button>Зарегистрироваться</Button>
+        </div>
+      }
     </form>
   )
 }

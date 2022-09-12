@@ -1,6 +1,7 @@
 import Navigation from "./components/screen/Navigation/Navigation";
 import AppRouter from "./router/AppRouter";
 import './styles/global.scss'
+import './styles/react-select.scss'
 
 
 

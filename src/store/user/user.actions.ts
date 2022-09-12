@@ -15,7 +15,6 @@ export const register = createAsyncThunk<IUser, IUserRegistration>('registration
 
 export const login = createAsyncThunk<IUser, IUserLogin>('login', async ({email, password}, thunkApi) => {
   try {
-    console.log(1)
     const response = await authService.login(email, password)
     return response.data
   } catch (e) {

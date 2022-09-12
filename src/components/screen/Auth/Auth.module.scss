@@ -20,4 +20,23 @@
   input {
     margin-bottom: 10px;
   }
+
+  .btnContainer {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    >button {
+      width: 100%;
+      max-width: 250px;
+      margin-left: auto;
+    }
+
+    >a {
+      margin: 0 auto;
+      &:hover {
+        border-bottom: 1px solid white;
+      }
+    }
+  }
 }
