@@ -7,6 +7,7 @@ import { IOptions } from '../../ui/Select/select.interface'
 import styles from './Navigation.module.scss'
 import cn from 'classnames'
 import { useTypedSelector } from '../../../hooks/useTypedSelector'
+import { Link } from 'react-router-dom'
 
 const optionsTheme: IOptions[] = [
   {
@@ -28,6 +29,7 @@ const Navigation = () => {
   const {logout} = useActions()
   const {changeColor} = useActions()
   const {colorTheme} = useTypedSelector(state => state.theme)
+  const {currentBoard} = useTypedSelector(state => state.board)
   const [sortType, setSortType] = useState({value: 'black', label: 'Темная'})
 
   useEffect(() => {
@@ -57,6 +59,7 @@ const Navigation = () => {
       [styles.blackTheme]: colorTheme === 'black' || colorTheme === 'space',
       [styles.classicTheme]: colorTheme === 'classic'
     })}>
+      {currentBoard && <Link to='/'><Button className={styles.backBtn}>Назад</Button></Link>}
       <span className={styles.selectLabel}>Тема: </span>
       <MySelect options={optionsTheme} setSortType={setSortType} value={sortType} />
       <Button className={styles.btnLogout} onClick={() => logout()}>Выйти</Button>

@@ -26,6 +26,9 @@ export const boardSlice = createSlice({
     changeCurrentBoard: (state, action: PayloadAction<IBoard>) => {
       state.currentBoard = action.payload
     },
+    clearCurrentBoard: (state) => {
+      state.currentBoard = null
+    },
     addSectionId: (state, action: PayloadAction<string>) => {
       state.idCurrentSection = action.payload
     },

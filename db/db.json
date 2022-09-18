@@ -34,6 +34,71 @@
           "idSection": "3b3b85ad-a225-40c6-994e-b88d6f3f09fd",
           "titleSection": "efefef",
           "tasks": []
+        },
+        {
+          "idSection": "06ee3562-d0c0-4f05-88a8-94cff28f0b89",
+          "titleSection": "вававава",
+          "tasks": [
+            {
+              "idTask": "a8709f74-9c35-4382-8319-dccd184639c3",
+              "titleTask": "f",
+              "description": "vdvdddddddddddddddddddddddddddddddddddddddddd",
+              "idUser": 1,
+              "createdAt": "18.09.2022"
+            },
+            {
+              "idTask": "1fea124b-b2b9-4674-ba1f-fc578c6bdf00",
+              "titleTask": "d",
+              "description": "d",
+              "idUser": 1,
+              "createdAt": "18.09.2022"
+            },
+            {
+              "idTask": "8a3ea361-7171-41b5-81d4-6e22afbb99e3",
+              "titleTask": "d",
+              "description": "d",
+              "idUser": 1,
+              "createdAt": "18.09.2022"
+            },
+            {
+              "idTask": "2cb93345-585e-40a7-91c5-3755f6d51795",
+              "titleTask": "d",
+              "description": "c",
+              "idUser": 1,
+              "createdAt": "18.09.2022"
+            },
+            {
+              "idTask": "9dfc7799-03a5-48bf-a820-254f8a8452d8",
+              "titleTask": "",
+              "description": "",
+              "idUser": 1,
+              "createdAt": "18.09.2022"
+            },
+            {
+              "idTask": "3485c699-25a7-495c-9a18-df82270364cf",
+              "titleTask": "dvdv",
+              "description": "dvdv",
+              "idUser": 1,
+              "createdAt": "18.09.2022"
+            },
+            {
+              "idTask": "9a2e325a-338d-48ba-af68-ed1dc1597ce4",
+              "titleTask": "sdvsvwv",
+              "description": "aefwfwf",
+              "idUser": 1,
+              "createdAt": "18.09.2022"
+            }
+          ]
+        },
+        {
+          "idSection": "9585b010-632b-453b-8a38-7ff90eb38d42",
+          "titleSection": "rgrgrgrg",
+          "tasks": []
+        },
+        {
+          "idSection": "4d0212f3-f7cb-4a74-abdd-e832b4dbfa29",
+          "titleSection": "rsgerge",
+          "tasks": []
         }
       ]
     },
@@ -47,6 +112,11 @@
         {
           "idSection": "fcaa46d9-1891-4579-9373-c3b94744a3c9",
           "titleSection": "dvdvdv",
+          "tasks": []
+        },
+        {
+          "idSection": "a3a4da48-afec-45f8-b95a-3c3041cdcb0b",
+          "titleSection": "ddvdfd",
           "tasks": []
         }
       ]
@@ -70,6 +140,28 @@
     {
       "id": "8b1c1f8c-1a12-4c98-aae4-702a2964c3b4",
       "titleBoard": "ccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "usersOnBoard": [
+        1
+      ],
+      "sections": []
+    },
+    {
+      "id": "cdb46750-fa7a-4e94-bd4c-153b3a247833",
+      "titleBoard": "f",
+      "usersOnBoard": [
+        1
+      ],
+      "sections": [
+        {
+          "idSection": "b652580e-0bc9-4bcd-84ea-944ef244962e",
+          "titleSection": "dvdvd",
+          "tasks": []
+        }
+      ]
+    },
+    {
+      "id": "cd6d058c-6571-45e0-a6cc-155f686e7cb2",
+      "titleBoard": "v",
       "usersOnBoard": [
         1
       ],

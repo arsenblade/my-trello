@@ -6,6 +6,18 @@
     color: rgba($color: $blue, $alpha: .9)
   }
 
+  .boardsList {
+    &::-webkit-scrollbar  {
+      background-color: rgba($color: $blue-light, $alpha: .2);
+      width: 16px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: $blue-light;
+      width: 8px;
+    }
+  }
+
   .boardAdd {
     border: 2px solid rgba($color: $blue-light, $alpha: .9);
     background-color: rgba($color: $blue-light, $alpha: .1);
@@ -38,6 +50,18 @@
 .blackTheme {
   >h1 {
     color: rgba($color: white, $alpha: .9)
+  }
+
+  .boardsList {
+    &::-webkit-scrollbar  {
+      background-color: $gray300;
+      width: 16px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: $gray600;
+      width: 8px;
+    }
   }
 
   .boardAdd {

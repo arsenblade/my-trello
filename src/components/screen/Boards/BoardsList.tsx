@@ -7,17 +7,17 @@ import styles from './Boards.module.scss'
 import cn from 'classnames'
 
 const BoardsList = () => {
-  const {getBoards, openModal} = useActions()
+  const {getBoards, openModal } = useActions()
   const {user, isLoading} = useAuth()
   const {boards} = useTypedSelector(state => state.board)
   const {colorTheme} = useTypedSelector(state => state.theme)
+
 
   useEffect(() => {
     if(user && !isLoading) {
       getBoards(user.id)
     }
   }, [isLoading])
-
 
   return (
     <div className={cn(styles.boardContainer, {

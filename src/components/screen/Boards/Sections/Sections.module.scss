@@ -1,5 +1,83 @@
 @import '../../../../styles/variables.scss';
 
+.classicTheme {
+  &::-webkit-scrollbar  {
+    background-color: rgba($color: $blue-light, $alpha: .2);
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: $blue-light;
+    width: 8px;
+  }
+
+  .closeBtn {
+    color: white;
+  }
+
+  .sectionItem {
+    background-color: rgba($color: $blue-light, $alpha: .7);
+
+    .btnAddTask {
+      color: rgba($color: white, $alpha: .9);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+    }
+  }
+
+  .titleSection {
+    color: white;
+  }
+
+  .columnAdd {
+    background-color: rgba($color: $blue-light, $alpha: .5);
+    color: white;
+
+    &:hover {
+      background-color: rgba($color: $blue-light, $alpha: .7);
+    }
+  }
+}
+
+.blackTheme {
+  &::-webkit-scrollbar  {
+    background-color: $gray300;
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray600;
+    width: 8px;
+  }
+
+  .sectionItem {
+    background-color: $gray300;
+
+    .btnAddTask {
+      color: $gray600;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+    }
+  }
+
+  .titleSection {
+    color: $gray900;
+  }
+
+  .columnAdd {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: white;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
 .sectionList {
   display: flex;
   align-items: flex-start;
@@ -9,7 +87,6 @@
   height: calc(100vh - 54px);
 
   .sectionItem {
-    background-color: $gray300;
     min-width: 300px;
     width: 300px;
     padding: 20px;
@@ -25,7 +102,6 @@
       border: none;
       outline: none;
       cursor: pointer;
-      color: $gray600;
       border-radius: 4px;
 
       &::before {
@@ -47,10 +123,6 @@
         transform: translate( 0, -50%) rotate(90deg);
         z-index: 4;
       }
-
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.4);
-      }
     }
 
     .header {
@@ -60,7 +132,6 @@
       .titleSection {
         margin: 0;
         margin-bottom: 10px;
-        color: $gray900;
         width: 240px;
         font-size: 30px;
         margin: 0;
@@ -90,8 +161,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.4);
-    color: white;
     font-size: 20px;
     font-weight: 600;
     border-radius: 4px;
@@ -118,10 +187,6 @@
       content: '|';
       transform: translate( 0, -50%) rotate(90deg);
       z-index: 4;
-    }
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.5);
     }
   }
 }

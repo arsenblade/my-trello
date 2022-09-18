@@ -15,6 +15,7 @@ const Modal:FC = () => {
   const {currentBoard, idCurrentSection} = useTypedSelector(state => state.board)
   const {closeModal, createBoard, addSection, addTask, clearSectionId} = useActions()
   const {user} = useAuth()
+  const {colorTheme} = useTypedSelector(state => state.theme)
 
   const clearAndCloseModal = () => {
     setValueDescription('')
@@ -41,7 +42,9 @@ const Modal:FC = () => {
 
   return (
     <div className={cn(styles.modalContainer, {
-      [styles.close]: !isVisible
+      [styles.close]: !isVisible,
+      [styles.blackTheme]: colorTheme === 'black' || colorTheme === 'space',
+      [styles.classicTheme]: colorTheme === 'classic'
     })} onClick={() => closeModal()}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>

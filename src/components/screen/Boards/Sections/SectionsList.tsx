@@ -5,6 +5,7 @@ import SectionsItem from './SectionsItem'
 import styles from './Sections.module.scss'
 import { useActions } from '../../../../hooks/useActions'
 import { useAuth } from '../../../../hooks/useAuth'
+import cn from 'classnames'
 
 
 const SectionsList = () => {
@@ -12,7 +13,8 @@ const SectionsList = () => {
   const {boards} = useTypedSelector(state => state.board)
   const {user, isLoading} = useAuth()
   const findBoard = boards.find(board => board.id === id)
-  const {getBoards, changeCurrentBoard, openModal} = useActions()
+  const {getBoards, changeCurrentBoard, openModal, clearCurrentBoard} = useActions()
+  const {colorTheme} = useTypedSelector(state => state.theme)
 
   useEffect(() => {
     if(user && !isLoading) {
@@ -26,8 +28,17 @@ const SectionsList = () => {
     }
   }, [findBoard])
 
+  useEffect(() => {
+    return () => {
+      clearCurrentBoard()
+    };
+  }, [])
+
   return (
-    <div className={styles.sectionList}>
+    <div className={cn(styles.sectionList, {
+      [styles.blackTheme]: colorTheme === 'black' || colorTheme === 'space',
+      [styles.classicTheme]: colorTheme === 'classic'
+    })}>
       {findBoard?.sections.map(section => <SectionsItem key={section.idSection} section={section} boardId={findBoard.id} />)}
       <div className={styles.columnAdd} onClick={() => openModal({title: 'Добавить колонку', type: 'section'})}><span>Добавить колонку</span></div>
     </div>

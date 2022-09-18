@@ -1,10 +1,37 @@
 @import '../../../../../styles/variables.scss';
 
+.classicTheme {
+  &::-webkit-scrollbar  {
+    background-color: white;
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: $blue;
+    width: 8px;
+  }
+}
+
+.blackTheme {
+  &::-webkit-scrollbar  {
+    background-color: $gray500;
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray700;
+    width: 8px;
+  }
+}
+
 .taskList {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   margin-bottom: 10px;
+  overflow-y: auto;
+  max-height: 500px;
+  padding-right: 6px;
 
   .taskItem {
     background-color: rgba($color: white, $alpha: .9);
