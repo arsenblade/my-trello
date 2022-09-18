@@ -16,3 +16,11 @@ export interface IAddTask {
   titleTask: string,
   description: string
 }
+
+export interface IDeleteSection {
+  boardId: string ,sectionId: string
+}
+
+export interface IDeleteTask {
+  boardId: string, sectionId: string, taskId: string
+}

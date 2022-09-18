@@ -53,15 +53,35 @@
       }
     }
 
-    .titleSection {
-      margin: 0;
-      margin-bottom: 10px;
-      color: $gray900;
-      width: 240px;
-      font-size: 30px;
-      margin: 0;
-      word-break: break-all;
-      margin-bottom: 10px;
+    .header {
+      display: flex;
+      align-items: flex-start;
+
+      .titleSection {
+        margin: 0;
+        margin-bottom: 10px;
+        color: $gray900;
+        width: 240px;
+        font-size: 30px;
+        margin: 0;
+        word-break: break-all;
+        margin-bottom: 10px;
+      }
+
+      .closeBtn {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 24px;
+        padding: 3px 6px;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-left: auto;
+
+        &:hover {
+          background-color: $primary;
+        }
+      }
     }
   }
 

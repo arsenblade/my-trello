@@ -54,6 +54,23 @@ export const boardService = {
     }
   },
 
+  async deleteSection(boardId: string ,sectionId: string) {
+    const {data} = await axiosPublic.get<IBoard>(getBoardsUrl(boardId))
+    data.sections = data.sections.filter(section => section.idSection !== sectionId)
+    const resposne = await axiosPublic.put(getBoardsUrl(boardId), data)
+    
+    return {boardId, sectionId}
+  },
+
+  async deleteTask(boardId: string, sectionId: string, taskId: string) {
+    const {data} = await axiosPublic.get<IBoard>(getBoardsUrl(boardId))
+    const currentSectionId = data.sections.findIndex(section => section.idSection === sectionId)
+    data.sections[currentSectionId].tasks = data.sections[currentSectionId].tasks.filter(task => task.idTask !== taskId)
+    const resposne = await axiosPublic.put(getBoardsUrl(boardId), data)
+    
+    return {boardId, sectionId, taskId}
+  },
+
   async addTask(userId: number, boardId: string, idSection: string, titleTask: string, description: string) {
     const response = await axiosPublic.get<IBoard[]>(getBoardsUrl())
     const filteredBoard = response.data.find(board => board.id === boardId)

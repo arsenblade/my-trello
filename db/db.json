@@ -19,159 +19,6 @@
         {
           "idSection": "ec2659a6-77b1-4a9d-80d8-1bb1d3518d25",
           "titleSection": "явмым",
-          "tasks": [
-            {
-              "idTask": "8d15b07e-abe1-4fc8-863c-2cf9bc83091e",
-              "titleTask": "",
-              "description": "",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "0c7a5673-7a44-434f-b232-44bbdadc59ce",
-      "titleBoard": "qwwwwwwwwwwwwwwwwwwwwwwww",
-      "usersOnBoard": [
-        1
-      ],
-      "sections": [
-        {
-          "idSection": "b5a7e44b-3e07-41d0-9353-8fad1df1e48d",
-          "titleSection": "efefef",
-          "tasks": [
-            {
-              "idTask": "7833e46b-affe-4644-a79b-7677532f5ada",
-              "titleTask": "fssfbf",
-              "description": "bfsbdfb",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            },
-            {
-              "idTask": "616f8add-e324-4cfc-b399-f92e6b8fcace",
-              "titleTask": "vbcg g",
-              "description": "dddddddddddddddddddddddddddddddddddddddddddddddddddd",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            },
-            {
-              "idTask": "b82c9a79-09d2-4074-ba68-66d59941ae4a",
-              "titleTask": "ccbc",
-              "description": "cbcbcbcb cbc cbcbc bc bc bcb cb cb cb cb cb ",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            },
-            {
-              "idTask": "f5f0043a-8c27-4374-b9d1-470257d43cd8",
-              "titleTask": "dffddddddddddddddddddddddddddddddddddddd",
-              "description": "vv",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            }
-          ]
-        },
-        {
-          "idSection": "f74ba82a-158d-4bce-b5e2-ca1fd68d34a7",
-          "titleSection": "efefef",
-          "tasks": [
-            {
-              "idTask": "9e0e2dff-1ff2-4a27-9b73-85f084151c2b",
-              "titleTask": "task",
-              "description": "aegwegwegfwgwegwr",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            },
-            {
-              "idTask": "5be6d2d8-9085-4900-957a-4b7ee5c7b59f",
-              "titleTask": "Новая ",
-              "description": "Текст",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            },
-            {
-              "idTask": "88c11100-f992-4665-8304-6be819d31dc0",
-              "titleTask": "всывсывм",
-              "description": "явмвымывмыв",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            },
-            {
-              "idTask": "1b263d4d-0d0e-47e3-902f-d99371dcc20c",
-              "titleTask": "ffff",
-              "description": "dddddddddddddddddddddddddddddddddddddddddddddddddddd",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            }
-          ]
-        },
-        {
-          "idSection": "16e149ff-a4de-4915-9ba8-d4197a32a95a",
-          "titleSection": "efefef",
-          "tasks": [
-            {
-              "idTask": "2f58eea3-4ee1-4f18-8a5e-d7f340a981e6",
-              "titleTask": "task",
-              "description": "aegwegwegfwgwegwr",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            },
-            {
-              "idTask": "160a9897-e7f5-4522-bebf-0a349b7a9349",
-              "titleTask": "task",
-              "description": "aegwegwegfwgwegwr",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            },
-            {
-              "idTask": "c858868f-4b3d-45d4-beb4-51c2477a125f",
-              "titleTask": "",
-              "description": "",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            }
-          ]
-        },
-        {
-          "idSection": "0d5250a3-ae6a-44bd-b3f2-d4397fd0ad64",
-          "titleSection": "efefef",
-          "tasks": [
-            {
-              "idTask": "60db1b8c-39fb-41c3-a584-4df1f0b4399d",
-              "titleTask": "с чс чс ч",
-              "description": "вмвмчм",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            }
-          ]
-        },
-        {
-          "idSection": "962bf844-3824-451e-9891-3225d41ad998",
-          "titleSection": "efefef",
-          "tasks": [
-            {
-              "idTask": "917963a7-8f96-4007-aa24-7515cb705c0f",
-              "titleTask": "и аиваиваии",
-              "description": "ч чиаиваиваи",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            }
-          ]
-        },
-        {
-          "idSection": "b8b21cb7-8225-4c6c-b33a-f1441baea811",
-          "titleSection": "колонка",
-          "tasks": []
-        },
-        {
-          "idSection": "80a224b6-e1e2-4249-ab6c-4bcb0d18f3f3",
-          "titleSection": "колjyy",
-          "tasks": []
-        },
-        {
-          "idSection": "2b932751-9922-45ab-82ee-c154d6e0988b",
-          "titleSection": "vvbvbvbvb",
           "tasks": []
         }
       ]
@@ -187,24 +34,6 @@
           "idSection": "3b3b85ad-a225-40c6-994e-b88d6f3f09fd",
           "titleSection": "efefef",
           "tasks": []
-        },
-        {
-          "idSection": "fee79d82-4dad-4f1c-9709-134b9399faf2",
-          "titleSection": "efefef",
-          "tasks": [
-            {
-              "idTask": "5fd9cc89-1b19-4ef9-83a1-b374150598d1",
-              "titleTask": "ацуацуа",
-              "description": "уацуацу",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            }
-          ]
-        },
-        {
-          "idSection": "f6b9ece0-76a0-4cfa-8159-adbdaad68bc9",
-          "titleSection": "rfrfrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
-          "tasks": []
         }
       ]
     },
@@ -216,13 +45,8 @@
       ],
       "sections": [
         {
-          "idSection": "45786163-6aff-4eae-b7c4-a2fd96b54188",
-          "titleSection": "efefef",
-          "tasks": []
-        },
-        {
-          "idSection": "5aad0ea4-e276-402e-9b7b-e21d940b3aa2",
-          "titleSection": "efefef",
+          "idSection": "fcaa46d9-1891-4579-9373-c3b94744a3c9",
+          "titleSection": "dvdvdv",
           "tasks": []
         }
       ]

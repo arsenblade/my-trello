@@ -28,7 +28,7 @@ const SectionsList = () => {
 
   return (
     <div className={styles.sectionList}>
-      {findBoard?.sections.map(section => <SectionsItem key={section.idSection} section={section} />)}
+      {findBoard?.sections.map(section => <SectionsItem key={section.idSection} section={section} boardId={findBoard.id} />)}
       <div className={styles.columnAdd} onClick={() => openModal({title: 'Добавить колонку', type: 'section'})}><span>Добавить колонку</span></div>
     </div>
   )

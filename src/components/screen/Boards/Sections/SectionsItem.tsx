@@ -6,11 +6,12 @@ import styles from './Sections.module.scss'
 import TaskList from './Task/TaskList'
 
 interface SectionsItemProps {
-  section: ISection
+  section: ISection,
+  boardId: string
 }
 
-const SectionsItem:FC<SectionsItemProps> = ({section}) => {
-  const {openModal, addSectionId} = useActions()
+const SectionsItem:FC<SectionsItemProps> = ({section, boardId}) => {
+  const {openModal, addSectionId, deleteSection} = useActions()
 
   const handleTaskAdd = () => {
     addSectionId(section.idSection)
@@ -19,8 +20,11 @@ const SectionsItem:FC<SectionsItemProps> = ({section}) => {
 
   return (
     <div className={styles.sectionItem}>
-      <h2 className={styles.titleSection}>{section.titleSection}</h2>
-      <TaskList tasks={section.tasks} />
+      <div className={styles.header}>
+        <h2 className={styles.titleSection}>{section.titleSection}</h2>
+        <button className={styles.closeBtn} onClick={() => deleteSection({boardId, sectionId: section.idSection})}>X</button>
+      </div>
+      <TaskList tasks={section.tasks} boardId={boardId} sectionId={section.idSection} />
       <button className={styles.btnAddTask} onClick={() => handleTaskAdd()}>Добавить карточку</button>
     </div>
   )
