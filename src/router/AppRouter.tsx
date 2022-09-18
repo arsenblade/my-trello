@@ -1,11 +1,15 @@
 import React from 'react'
-import { publicRoutes } from './Routes'
+import { privateRoutes, publicRoutes } from './Routes'
 import { Route, Routes } from 'react-router'
+import { useAuth } from '../hooks/useAuth'
 
 const AppRouter = () => {
+  const {user} = useAuth()
+
   return (
     <Routes>
-      {publicRoutes.map(({Component, path}) => <Route key={path} path={path} element={<Component />} />)}
+      {!user && publicRoutes.map(({Component, path}) => <Route key={path} path={path} element={<Component />} />)}
+      {user && privateRoutes.map(({Component, path}) => <Route key={path} path={path} element={<Component />} />)}
     </Routes>
   )
 }

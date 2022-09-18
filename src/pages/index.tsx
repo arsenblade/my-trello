@@ -1,8 +1,10 @@
 import React from 'react'
+import BoardsList from '../components/screen/Boards/BoardsList'
 
 const IndexPage = () => {
+
   return (
-    <div>index</div>
+    <BoardsList />
   )
 }
 

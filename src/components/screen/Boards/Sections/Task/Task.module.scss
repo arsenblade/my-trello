@@ -1,0 +1,52 @@
+@import '../../../../../styles/variables.scss';
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-bottom: 10px;
+
+  .taskItem {
+    background-color: rgba($color: white, $alpha: .9);
+    border-radius: 4px;
+    box-shadow: 0 1px 0 #091e4240;
+    padding: 8px;
+
+
+    .headerTask {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      column-gap: 10px;
+
+      .titleTask {
+        margin: 0;
+        color: $gray800;
+        width: 100%;
+        word-break: break-all;
+      }
+
+      .closeBtn {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 20px;
+        padding: 3px 6px;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-left: auto;
+
+        &:hover {
+          background-color: $primary;
+        }
+      }
+    }
+
+    .description {
+      color: $gray700;
+      margin: 0;
+      width: 100%;
+      word-break: break-all;
+    }
+  }
+}

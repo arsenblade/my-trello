@@ -1,20 +1,34 @@
 @import './variables.scss';
 
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: 'Outfit', sans-serif;
-  background-color: $gray800;
-  height: 100%;
+  height: 100vh;
 
   >div {
-    height: 100%;
+    height: 100vh;
   }
 }
 
 .app {
-  height: 100%;
+  height: max-content;
+  min-height: 100vh;
+}
+
+.spaceTheme {
+  background: url('../assets/img/space-back.jpg') no-repeat;
+  background-color: $gray800;
+}
+
+.blackTheme {
+  background-color: $gray800;
+}
+
+.classicTheme {
+  background-color: #e5eaf1;
 }
 
 .error404 {

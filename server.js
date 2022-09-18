@@ -38,6 +38,8 @@ server.post('/login', (req, res) => {
     return res.status(500).json({ message: e.message });
   }
 });
+
+
 // проверяем, авторизован ли пользователь
 server.use((req, res, next) => {
  // разрешаем публичный доступ без авторизации

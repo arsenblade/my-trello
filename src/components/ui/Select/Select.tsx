@@ -1,9 +1,13 @@
 import React, { FC } from 'react'
 import Select, { SingleValue } from 'react-select';
 import { IMySelect, ValueSelect } from './select.interface';
+import cn from 'classnames'
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
 
 const MySelect:FC<IMySelect> = ({value, setSortType, options}) => {
+  const {colorTheme} = useTypedSelector(state => state.theme)
+
   const handleChange = (e: SingleValue<ValueSelect>) => {
     setSortType({value: e?.value || '', label: e?.label || ''})
   }
@@ -11,7 +15,10 @@ const MySelect:FC<IMySelect> = ({value, setSortType, options}) => {
   return (
     <Select
     className='select-container'
-    classNamePrefix="custom-select"
+    classNamePrefix={cn({
+      'custom-select-black-space': colorTheme === 'black' || colorTheme === 'space',
+      'custom-select-classic': colorTheme === 'classic',
+    })}
     isSearchable={false}
     name="sort"
     value={value}

@@ -1,11 +1,13 @@
 import React, { FC, FormEvent, useState } from 'react'
-import { useLocation, useNavigate, useParams } from 'react-router'
+import { useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
 import { useActions } from '../../../hooks/useActions'
 import { useAuth } from '../../../hooks/useAuth'
 import Button from '../../ui/Button/Button'
 import Input from '../../ui/Input/Input'
 import styles from './Auth.module.scss'
+import cn from 'classnames'
+import { useTypedSelector } from '../../../hooks/useTypedSelector'
 
 interface IAuthProps {
   type: 'registration' | 'login'
@@ -15,10 +17,10 @@ const Auth:FC<IAuthProps> = ({type}) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
+  const {colorTheme} = useTypedSelector(state => state.theme)
   const {login, register} = useActions()
   const {user, isLoading} = useAuth()
   const navigate = useNavigate()
-  const {pathname} = useLocation()
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -31,12 +33,18 @@ const Auth:FC<IAuthProps> = ({type}) => {
   }
 
   if(isLoading === true || user) {
-    navigate('/')
     return (null)
   }
 
+  if(user) {
+    navigate('/')
+  }
+
   return (
-    <form className={styles.authForm} onSubmit={(e) => handleSubmit(e)}>
+    <form className={cn(styles.authForm, {
+      [styles.blackTheme]: colorTheme === 'black' || colorTheme === 'space',
+      [styles.classicTheme]: colorTheme === 'classic'
+    })} onSubmit={(e) => handleSubmit(e)}>
       <h1>{type === 'registration' ? 'Регистрация' : 'Авторизация'}</h1>
       <Input type="text" placeholder='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
       <Input type="text" placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)}/>

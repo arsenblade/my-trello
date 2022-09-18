@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router'
+import { useEffect, useState } from 'react'
 import { useActions } from '../../../hooks/useActions'
 import { useAuth } from '../../../hooks/useAuth'
 import Button from '../../ui/Button/Button'
 import MySelect from '../../ui/Select/Select'
 import { IOptions } from '../../ui/Select/select.interface'
 import styles from './Navigation.module.scss'
+import cn from 'classnames'
+import { useTypedSelector } from '../../../hooks/useTypedSelector'
 
 const optionsTheme: IOptions[] = [
   {
@@ -23,25 +24,39 @@ const optionsTheme: IOptions[] = [
 ]
 
 const Navigation = () => {
-  const navigation = useNavigate()
   const {user, isLoading} = useAuth()
   const {logout} = useActions()
+  const {changeColor} = useActions()
+  const {colorTheme} = useTypedSelector(state => state.theme)
   const [sortType, setSortType] = useState({value: 'black', label: 'Темная'})
+
+  useEffect(() => {
+    changeColor(sortType.value)
+  }, [sortType])
 
   if(isLoading) {
     return (
-      <div className={styles.navigation}>
+      <div className={cn(styles.navigation, {
+        [styles.blackTheme]: colorTheme === 'black' || colorTheme === 'space',
+        [styles.classicTheme]: colorTheme === 'classic'
+      })}>
 
       </div>)
   }
 
   return (
   !user ? 
-    <div className={styles.navigation}>
+    <div className={cn(styles.navigation, {
+      [styles.blackTheme]: colorTheme === 'black' || colorTheme === 'space',
+      [styles.classicTheme]: colorTheme === 'classic'
+    })}>
       <span className={styles.selectLabel}>Тема: </span>
       <MySelect options={optionsTheme} setSortType={setSortType} value={sortType} />
     </div> :
-    <div className={styles.navigation}>
+    <div className={cn(styles.navigation, {
+      [styles.blackTheme]: colorTheme === 'black' || colorTheme === 'space',
+      [styles.classicTheme]: colorTheme === 'classic'
+    })}>
       <span className={styles.selectLabel}>Тема: </span>
       <MySelect options={optionsTheme} setSortType={setSortType} value={sortType} />
       <Button className={styles.btnLogout} onClick={() => logout()}>Выйти</Button>

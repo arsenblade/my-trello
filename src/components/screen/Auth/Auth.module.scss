@@ -2,7 +2,7 @@
 
 .authForm {
   display: flex;
-  background-color: $gray950;
+  opacity: 0.9;
   flex-direction: column;
   color: white;
   width: 400px;
@@ -19,6 +19,9 @@
 
   input {
     margin-bottom: 10px;
+    &::placeholder {
+      color: rgba($color: white, $alpha: 0.8)
+    }
   }
 
   .btnContainer {
@@ -38,5 +41,19 @@
         border-bottom: 1px solid white;
       }
     }
+  }
+}
+
+.blackTheme {
+  background-color: $gray950;
+}
+
+.classicTheme {
+  opacity: 1;
+  background-color: rgba($color: $blue, $alpha: .8);
+  box-shadow: 0 0 2px rgb(58 66 75 / 10%), 0 2px 4px rgb(58 66 75 / 20%);
+
+  input {
+    color: white;
   }
 }

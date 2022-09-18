@@ -4,7 +4,6 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: $gray950;
   padding: 0 20px;
   padding-top: 6px;
   padding-bottom: 4px;
@@ -15,9 +14,27 @@
     color: white;
     font-weight: 600;
     margin-right: 20px;
+    margin-left: 10px;
   }
 
   .btnLogout {
     margin-left: auto;
+  }
+}
+
+.blackTheme {
+  background-color: rgba($color: $gray950, $alpha: 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+  .selectLabel {
+    color: white;
+  }
+}
+
+.classicTheme {
+  background-color: $blue;
+
+  .selectLabel {
+    color: white;
   }
 }
