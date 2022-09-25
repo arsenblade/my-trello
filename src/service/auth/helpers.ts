@@ -4,7 +4,8 @@ import { IUser } from "../../types/user.types"
 export const saveTokenStorage = (token: string, user: IUser) => {
   localStorage.setItem('accessToken', token)
   localStorage.setItem('user', JSON.stringify({
-    email: user.email,
+    avatar: user.avatar,
+    name: user.name,
     id: user.id
   }))
 }

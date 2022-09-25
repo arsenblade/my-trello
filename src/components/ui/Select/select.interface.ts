@@ -11,7 +11,7 @@ export interface ValueSelect {
 }
 
 export interface IMySelect {
-  setSortType: Dispatch<SetStateAction<{
+  setValue: Dispatch<SetStateAction<{
     value: string;
     label: string;
 }>>;

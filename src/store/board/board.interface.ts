@@ -14,7 +14,8 @@ export interface IAddTask {
   boardId: string,
   idSection: string,
   titleTask: string,
-  description: string
+  description: string,
+  deadLineDate: string | null
 }
 
 export interface IDeleteSection {
@@ -23,4 +24,22 @@ export interface IDeleteSection {
 
 export interface IDeleteTask {
   boardId: string, sectionId: string, taskId: string
+}
+
+export interface IDNDTask {
+  boardId: string,
+  sectionSourceId: string,
+  sectionDestinationId: string,
+  taskId: string, 
+  indexDestinationTask: number
+}
+
+export interface ITaskCompleted {
+  boardId: string,
+  sectionId: string,
+  taskId: string
+}
+
+export interface IAddUserOnBoard {
+  userId: number ,boardId: string
 }

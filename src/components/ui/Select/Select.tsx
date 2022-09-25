@@ -5,11 +5,11 @@ import cn from 'classnames'
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
 
-const MySelect:FC<IMySelect> = ({value, setSortType, options}) => {
+const MySelect:FC<IMySelect> = ({value, setValue, options}) => {
   const {colorTheme} = useTypedSelector(state => state.theme)
 
   const handleChange = (e: SingleValue<ValueSelect>) => {
-    setSortType({value: e?.value || '', label: e?.label || ''})
+    setValue({value: e?.value || '', label: e?.label || ''})
   }
 
   return (
@@ -21,9 +21,9 @@ const MySelect:FC<IMySelect> = ({value, setSortType, options}) => {
     })}
     isSearchable={false}
     name="sort"
-    value={value}
+    value={value.value === '' && value.label === '' ? null : value}
     onChange={handleChange}
-    placeholder={''}
+    placeholder='Пользователи'
     options={options}
   />
   )

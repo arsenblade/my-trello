@@ -8,6 +8,7 @@ import Input from '../../ui/Input/Input'
 import styles from './Auth.module.scss'
 import cn from 'classnames'
 import { useTypedSelector } from '../../../hooks/useTypedSelector'
+import { getRandomAvatar } from '../../../utils/randomAvatar'
 
 interface IAuthProps {
   type: 'registration' | 'login'
@@ -25,7 +26,7 @@ const Auth:FC<IAuthProps> = ({type}) => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if(type === 'registration') {
-      register({email, password, name})
+      register({email, password, name, avatar: getRandomAvatar()})
     }
     if(type === 'login') {
       login({email, password})
@@ -47,7 +48,7 @@ const Auth:FC<IAuthProps> = ({type}) => {
     })} onSubmit={(e) => handleSubmit(e)}>
       <h1>{type === 'registration' ? 'Регистрация' : 'Авторизация'}</h1>
       <Input type="text" placeholder='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
-      <Input type="text" placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+      <Input type="password" placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
       {type === 'registration' && <Input type="text" placeholder='name' value={name} onChange={(e) => setName(e.target.value)} />}
       {type === 'login' &&
         <div className={styles.btnContainer}>

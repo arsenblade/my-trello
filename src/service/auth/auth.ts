@@ -9,7 +9,7 @@ const uuid = require('uuid')
 
 
 export const authService = {
-  async register(email: string, password: string, name: string) {
+  async register(email: string, password: string, name: string, avatar: string) {
     const {data} = await axiosPublic.get<IUser[]>(getUsersUrl(), {
       params: {
         email_like: email
@@ -24,6 +24,7 @@ export const authService = {
       email,
       password,
       name,
+      avatar,
     }
 
     const response = await axiosPublic.post<IUser>(getRegisterUrl(), defaultUser)

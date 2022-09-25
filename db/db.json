@@ -5,167 +5,138 @@
       "password": "1234",
       "name": "Arsen",
       "myBoards": [],
-      "id": 1
+      "id": 1,
+      "avatar": "icon-user-blue-white"
+    },
+    {
+      "email": "test@mail.ru",
+      "password": "1234",
+      "name": "Ranzor01",
+      "avatar": "icon-user-blue",
+      "id": 2
+    },
+    {
+      "email": "test1@mail.ru",
+      "password": "1234",
+      "name": "Dana",
+      "avatar": "icon-user-hacker",
+      "id": 3
+    },
+    {
+      "email": "test2@mail.ru",
+      "password": "1234",
+      "name": "Grimm",
+      "avatar": "icon-user-hockey-mask",
+      "id": 4
+    },
+    {
+      "email": "test3@mail.ru",
+      "password": "1234",
+      "name": "Ragnar",
+      "avatar": "icon-user-vampire",
+      "id": 5
+    },
+    {
+      "email": "test4@mail.ru",
+      "password": "1234",
+      "name": "Haker",
+      "avatar": "icon-user-hacker",
+      "id": 6
+    },
+    {
+      "email": "test6@mail.ru",
+      "password": "1234",
+      "name": "BoxingMan",
+      "avatar": "icon-user-blue-white",
+      "id": 7
     }
   ],
   "boards": [
     {
-      "id": "04ff7a44-2dfe-47f1-b381-b4db49ec81d5",
-      "titleBoard": "wefwefwfwfwf",
+      "id": "a4335e43-1631-4a3c-9ece-1dfba4a008ed",
+      "titleBoard": "Мой проект",
       "usersOnBoard": [
-        1
+        1,
+        2,
+        3,
+        5
       ],
       "sections": [
         {
-          "idSection": "ec2659a6-77b1-4a9d-80d8-1bb1d3518d25",
-          "titleSection": "явмым",
-          "tasks": []
-        }
-      ]
-    },
-    {
-      "id": "f9daeaa4-e1ca-4f9d-9d52-64d21a351669",
-      "titleBoard": "efefefef",
-      "usersOnBoard": [
-        1
-      ],
-      "sections": [
-        {
-          "idSection": "3b3b85ad-a225-40c6-994e-b88d6f3f09fd",
-          "titleSection": "efefef",
-          "tasks": []
-        },
-        {
-          "idSection": "06ee3562-d0c0-4f05-88a8-94cff28f0b89",
-          "titleSection": "вававава",
+          "idSection": "276cc920-48b3-4f97-83f3-c8db61aaf972",
+          "titleSection": "Задачи",
           "tasks": [
             {
-              "idTask": "a8709f74-9c35-4382-8319-dccd184639c3",
-              "titleTask": "f",
-              "description": "vdvdddddddddddddddddddddddddddddddddddddddddd",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
+              "idTask": "e60e026e-a319-402b-b5fe-65220a529805",
+              "titleTask": "Сделать кастомную кнопку",
+              "description": "Все написано в диз доке",
+              "idUser": 3,
+              "deadLineDate": "2022-09-27T19:00:00.000Z",
+              "isCompleted": false
             },
             {
-              "idTask": "1fea124b-b2b9-4674-ba1f-fc578c6bdf00",
-              "titleTask": "d",
-              "description": "d",
+              "idTask": "b49936c2-0bc2-43fa-bb4b-a85a15633037",
+              "titleTask": "Нарисовать пару вариаций фона на главной странице",
+              "description": "Все написано в диз доке",
               "idUser": 1,
-              "createdAt": "18.09.2022"
+              "deadLineDate": "2022-09-23T19:00:00.000Z",
+              "isCompleted": false
             },
             {
-              "idTask": "8a3ea361-7171-41b5-81d4-6e22afbb99e3",
-              "titleTask": "d",
-              "description": "d",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            },
-            {
-              "idTask": "2cb93345-585e-40a7-91c5-3755f6d51795",
-              "titleTask": "d",
-              "description": "c",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            },
-            {
-              "idTask": "9dfc7799-03a5-48bf-a820-254f8a8452d8",
-              "titleTask": "",
-              "description": "",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            },
-            {
-              "idTask": "3485c699-25a7-495c-9a18-df82270364cf",
-              "titleTask": "dvdv",
-              "description": "dvdv",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
-            },
-            {
-              "idTask": "9a2e325a-338d-48ba-af68-ed1dc1597ce4",
-              "titleTask": "sdvsvwv",
-              "description": "aefwfwf",
-              "idUser": 1,
-              "createdAt": "18.09.2022"
+              "idTask": "f511f30d-c35f-4ffc-a6b5-e7b43bfea349",
+              "titleTask": "Сделать анимацию перехода на другие страницы",
+              "description": "Плавное проявление новой страницы ",
+              "idUser": 3,
+              "deadLineDate": "2022-09-26T19:00:00.000Z",
+              "isCompleted": false
             }
           ]
         },
         {
-          "idSection": "9585b010-632b-453b-8a38-7ff90eb38d42",
-          "titleSection": "rgrgrgrg",
-          "tasks": []
+          "idSection": "11311593-7e07-4de0-acc0-3e60fe73154a",
+          "titleSection": "Взял задачу",
+          "tasks": [
+            {
+              "idTask": "3890e7ac-b89b-4757-b0eb-16c28ec39899",
+              "titleTask": "Сделать панель навигации",
+              "description": "Кнопки навигации по странице: главная, каталог, мой профиль. В правом углу кнопка выйти",
+              "idUser": 5,
+              "deadLineDate": "2022-09-25T19:00:00.000Z",
+              "isCompleted": false
+            }
+          ]
         },
         {
-          "idSection": "4d0212f3-f7cb-4a74-abdd-e832b4dbfa29",
-          "titleSection": "rsgerge",
-          "tasks": []
+          "idSection": "eeaa613b-ada2-4c72-b684-9b9b4c32d1fe",
+          "titleSection": "Сделал задачу",
+          "tasks": [
+            {
+              "idTask": "b1ae556c-3a51-4871-8a7e-5d36806dfe8a",
+              "titleTask": "Составить документацию по коду",
+              "description": "Описать все ключевые пути к серверу. Описать ключевые вспомогательные функции, а также написать подсказки в коде.",
+              "idUser": 2,
+              "deadLineDate": "2022-09-29T19:00:00.000Z",
+              "isCompleted": true
+            },
+            {
+              "idTask": "56af2c7b-4013-4fca-881e-9b644262a7a2",
+              "titleTask": "Нарисовать логотип",
+              "description": "Искать в диз доке",
+              "idUser": 1,
+              "deadLineDate": "2022-09-26T19:00:00.000Z",
+              "isCompleted": false
+            },
+            {
+              "idTask": "6e1f1f42-9299-4e58-bd30-5eefe24f3938",
+              "titleTask": "Сделать авторизацию ",
+              "description": "По jwt токену, используя access и refresh токены. access живет 15 минут, refresh 3 дня.",
+              "idUser": 2,
+              "deadLineDate": "2022-09-26T19:00:00.000Z",
+              "isCompleted": true
+            }
+          ]
         }
       ]
-    },
-    {
-      "id": "1c486c2f-cd1b-4928-9f49-c4a7d1f62e73",
-      "titleBoard": "vddvdvdvdvdvd",
-      "usersOnBoard": [
-        1
-      ],
-      "sections": [
-        {
-          "idSection": "fcaa46d9-1891-4579-9373-c3b94744a3c9",
-          "titleSection": "dvdvdv",
-          "tasks": []
-        },
-        {
-          "idSection": "a3a4da48-afec-45f8-b95a-3c3041cdcb0b",
-          "titleSection": "ddvdfd",
-          "tasks": []
-        }
-      ]
-    },
-    {
-      "id": "ef754083-bcc0-404e-b444-0029659572c1",
-      "titleBoard": "fefeefefefef",
-      "usersOnBoard": [
-        1
-      ],
-      "sections": []
-    },
-    {
-      "id": "949226b5-16fb-4e01-be1c-e250b2b05c0d",
-      "titleBoard": "d",
-      "usersOnBoard": [
-        1
-      ],
-      "sections": []
-    },
-    {
-      "id": "8b1c1f8c-1a12-4c98-aae4-702a2964c3b4",
-      "titleBoard": "ccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
-      "usersOnBoard": [
-        1
-      ],
-      "sections": []
-    },
-    {
-      "id": "cdb46750-fa7a-4e94-bd4c-153b3a247833",
-      "titleBoard": "f",
-      "usersOnBoard": [
-        1
-      ],
-      "sections": [
-        {
-          "idSection": "b652580e-0bc9-4bcd-84ea-944ef244962e",
-          "titleSection": "dvdvd",
-          "tasks": []
-        }
-      ]
-    },
-    {
-      "id": "cd6d058c-6571-45e0-a6cc-155f686e7cb2",
-      "titleBoard": "v",
-      "usersOnBoard": [
-        1
-      ],
-      "sections": []
     }
   ]
 }

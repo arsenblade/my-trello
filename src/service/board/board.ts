@@ -62,6 +62,18 @@ export const boardService = {
     return {boardId, sectionId}
   },
 
+  async addUserOnBoard(userId: number, boardId: string) {
+    const {data} = await axiosPublic.get<IBoard>(getBoardsUrl(boardId))
+    const findUser = data.usersOnBoard.find(userOnBoard => userOnBoard === userId)
+    
+    if(!findUser) {
+      data.usersOnBoard.push(userId)
+      await axiosPublic.put(getBoardsUrl(boardId), data)
+    }
+    
+    return data
+  },
+
   async deleteTask(boardId: string, sectionId: string, taskId: string) {
     const {data} = await axiosPublic.get<IBoard>(getBoardsUrl(boardId))
     const currentSectionId = data.sections.findIndex(section => section.idSection === sectionId)
@@ -71,7 +83,7 @@ export const boardService = {
     return {boardId, sectionId, taskId}
   },
 
-  async addTask(userId: number, boardId: string, idSection: string, titleTask: string, description: string) {
+  async addTask(userId: number, boardId: string, idSection: string, titleTask: string, description: string, deadLineDate: string | null) {
     const response = await axiosPublic.get<IBoard[]>(getBoardsUrl())
     const filteredBoard = response.data.find(board => board.id === boardId)
     const filteredSectionId = filteredBoard?.sections.findIndex(section => section.idSection === idSection)
@@ -82,7 +94,8 @@ export const boardService = {
         titleTask,
         description,
         idUser: userId,
-        createdAt: convertDate(String(Date.now()))
+        deadLineDate: deadLineDate ? deadLineDate : null,
+        isCompleted: false
       }
 
       filteredBoard.sections[filteredSectionId].tasks.push(task)
@@ -94,5 +107,39 @@ export const boardService = {
     else {
       throw new Error('Error server');
     }
-  }
+  },
+
+  async DNDTask(boardId: string, sectionSourceId: string, sectionDestinationId: string, taskId: string, indexDestinationTask: number){
+    const {data} = await axiosPublic.get<IBoard>(getBoardsUrl(boardId))
+    const sectionSourceIndex = data.sections.findIndex(s => s.idSection === sectionSourceId)
+    const sectionDestinationIndex = data.sections.findIndex(s => s.idSection === sectionDestinationId)
+    const currentTask = data.sections[sectionSourceIndex].tasks.find(t => t.idTask === taskId)
+    if(currentTask) {
+      data.sections[sectionSourceIndex].tasks =  data.sections[sectionSourceIndex].tasks.filter(t => t.idTask !== taskId)
+      data.sections[sectionDestinationIndex].tasks.splice(indexDestinationTask, 0, currentTask)
+      await axiosPublic.put<IBoard>(getBoardsUrl(boardId), data)
+    }
+
+    return data
+  },
+
+  async taskCompleted(boardId: string, sectionId: string, taskId: string){
+    const {data} = await axiosPublic.get<IBoard>(getBoardsUrl(boardId))
+    const sectionIndex = data.sections.findIndex(s => s.idSection === sectionId)
+    if(sectionIndex !== undefined && sectionIndex >= 0) {
+      data.sections[sectionIndex].tasks = data.sections[sectionIndex].tasks.map((task) => {
+        if(task.idTask === taskId) {
+          task.isCompleted = true
+          return task
+        }
+        else {
+          return task
+        }
+      })
+
+      await axiosPublic.put<IBoard>(getBoardsUrl(boardId), data)
+    }
+
+    return data
+  },
 }

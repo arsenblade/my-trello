@@ -5,6 +5,9 @@ import './styles/react-select.scss'
 import cn from 'classnames'
 import { useTypedSelector } from "./hooks/useTypedSelector";
 import Modal from "./components/screen/Modal/Modal";
+import 'react-calendar/dist/Calendar.css';
+import 'react-toastify/dist/ReactToastify.css';
+import MyToastContainer from "./components/ui/MyToast/MyToastContainer";
 
 
 
@@ -20,6 +23,7 @@ function App() {
       <Navigation />
       <AppRouter />
       <Modal/>
+      <MyToastContainer />
     </div>
   );
 }

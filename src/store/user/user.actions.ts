@@ -4,9 +4,9 @@ import { IUser } from "../../types/user.types";
 import { IUserLogin, IUserRegistration } from "./user.interface";
 
 
-export const register = createAsyncThunk<IUser, IUserRegistration>('registration', async ({email, password, name}, thunkApi) => {
+export const register = createAsyncThunk<IUser, IUserRegistration>('registration', async ({email, password, name, avatar}, thunkApi) => {
   try {
-    const response = await authService.register(email, password, name)
+    const response = await authService.register(email, password, name, avatar)
     return response.data
   } catch (e) {
     return thunkApi.rejectWithValue(e)

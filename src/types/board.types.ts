@@ -15,6 +15,7 @@ export interface ITask {
   idTask: string,
   titleTask: string,
   description: string,
-  createdAt: string,
-  idUser: number
+  deadLineDate: string | null,
+  idUser: number,
+  isCompleted: boolean
 }

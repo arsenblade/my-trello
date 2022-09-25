@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { boardService } from "../../service/board/board"
 import { IBoard } from "../../types/board.types"
-import { IAddSections, IAddTask, ICreateBoards, IDeleteSection, IDeleteTask } from "./board.interface"
+import { IAddSections, IAddTask, IAddUserOnBoard, ICreateBoards, IDeleteSection, IDeleteTask, IDNDTask, ITaskCompleted } from "./board.interface"
 
 
 export const getBoards = createAsyncThunk<IBoard[], number>('getBoards', async (userId, thunkApi) => {
@@ -49,9 +49,9 @@ export const deleteSection = createAsyncThunk<IDeleteSection, IDeleteSection>('d
   }
 })
 
-export const addTask = createAsyncThunk<IBoard, IAddTask>('addTask', async ({userId, boardId, idSection, description, titleTask}, thunkApi) => {
+export const addTask = createAsyncThunk<IBoard, IAddTask>('addTask', async ({userId, boardId, idSection, description, titleTask, deadLineDate}, thunkApi) => {
   try {
-    const response = await boardService.addTask(userId, boardId, idSection, titleTask, description)
+    const response = await boardService.addTask(userId, boardId, idSection, titleTask, description, deadLineDate)
     return response
   } catch (e) {
     return thunkApi.rejectWithValue(e)
@@ -61,6 +61,34 @@ export const addTask = createAsyncThunk<IBoard, IAddTask>('addTask', async ({use
 export const deleteTask = createAsyncThunk<IDeleteTask, IDeleteTask>('deleteTask', async ({boardId, sectionId, taskId}, thunkApi) => {
   try {
     const response = await boardService.deleteTask(boardId, sectionId, taskId)
+    return response
+  } catch (e) {
+    return thunkApi.rejectWithValue(e)
+  }
+})
+
+export const DNDTaskServer = createAsyncThunk<IBoard, IDNDTask>('DNDTaskServer', async ({boardId, sectionSourceId, sectionDestinationId, taskId, indexDestinationTask}, thunkApi) => {
+  try {
+    const response = await boardService.DNDTask(boardId, sectionSourceId, sectionDestinationId, taskId, indexDestinationTask)
+    return response
+  } catch (e) {
+    return thunkApi.rejectWithValue(e)
+  }
+})
+
+export const taskCompleted = createAsyncThunk<IBoard, ITaskCompleted>('TaskCompleted', async ({boardId, sectionId, taskId}, thunkApi) => {
+  try {
+    const response = await boardService.taskCompleted(boardId, sectionId, taskId)
+    return response
+  } catch (e) {
+    return thunkApi.rejectWithValue(e)
+  }
+})
+
+export const addUserOnBoard = createAsyncThunk<IBoard, IAddUserOnBoard>('AddUserOnBoard', async ({userId, boardId}, thunkApi) => {
+  try {
+    const response = await boardService.addUserOnBoard(userId, boardId)
+    console.log(response)
     return response
   } catch (e) {
     return thunkApi.rejectWithValue(e)

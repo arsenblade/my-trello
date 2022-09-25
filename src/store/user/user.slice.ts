@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { MyToast } from "../../components/ui/MyToast/MyToast";
 import { getStoreLocal } from "../../utils/userLocalStorage";
 import { login, logout, register } from "./user.actions";
 import { IInitialState } from "./user.interface";
@@ -22,13 +23,16 @@ export const userSlice = createSlice({
     .addCase(register.fulfilled, (state, {payload}) => {
       state.isLoading = false;
       state.user = {
-        email: payload.email,
-        id: payload.id
+        name: payload.name,
+        id: payload.id,
+        avatar: payload.avatar
       }
+      MyToast('Вы успешно зарегистрировались', true)
     })
     .addCase(register.rejected, (state) => {
       state.isLoading = false;
       state.user = null
+      MyToast('Произошла ошибка при регистрации', false)
     })
     .addCase(login.pending, (state) => {
       state.isLoading = true;
@@ -36,16 +40,20 @@ export const userSlice = createSlice({
     .addCase(login.fulfilled, (state, {payload}) => {
       state.isLoading = false;
       state.user = {
-        email: payload.email,
-        id: payload.id
+        name: payload.name,
+        id: payload.id,
+        avatar: payload.avatar
       }
+      MyToast('Вы успешно авторизировались', true)
     })
     .addCase(login.rejected, (state) => {
       state.isLoading = false;
       state.user = null
+      MyToast('Произошла ошибка при авторизации', false)
     })
     .addCase(logout.fulfilled, (state) => {
       state.user = null;
+      MyToast('Вы вышли успешно', true)
     })
   }
 })

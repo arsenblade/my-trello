@@ -3,4 +3,11 @@ export interface IUser {
   email: string;
   password: string;
   name: string;
+  avatar: string;
+}
+
+export interface IUsersAvatar {
+  id: number,
+  name: string,
+  avatar: string
 }
