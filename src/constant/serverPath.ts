@@ -1,4 +1,4 @@
-export const API_URL = 'https://test-server-bay.vercel.app'
+export const API_URL = 'https://server-my-trello.onrender.com'
 
 export const getLoginUrl = () => '/login'
 export const getRegisterUrl = () => '/users'

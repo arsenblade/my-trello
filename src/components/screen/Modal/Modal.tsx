@@ -66,7 +66,7 @@ const Modal:FC = () => {
       clearSectionId()
       clearAndCloseModal()
     }
-    else if(userOnTheBoard.value === '') {
+    else if(userOnTheBoard.value === '' && type === 'task') {
       MyToast('Нужно назначить пользователя', false)
     }
   }
