@@ -46,6 +46,8 @@ const Auth:FC<IAuthProps> = ({type}) => {
       [styles.blackTheme]: colorTheme === 'black' || colorTheme === 'space',
       [styles.classicTheme]: colorTheme === 'classic'
     })} onSubmit={(e) => handleSubmit(e)}>
+      <h1>Email: arsen@mail.ru</h1>
+      <h1>Password: 1234</h1>
       <h1>{type === 'registration' ? 'Регистрация' : 'Авторизация'}</h1>
       <Input type="text" placeholder='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
       <Input type="password" placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
